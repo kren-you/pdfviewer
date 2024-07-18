@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<body>
+<script setup lang="ts">
+import PDFViewer from 'https://kren-you.github.io/pdfviewer/PDFViewer.vue'
+// import PDFSrc from '@/assets/files/Markdown.pdf'
+
+// const PDFSrc = new URL('@/assets/files/Markdown.pdf', import.meta.url).href
+// pdf document pages are rendered. Can be used to set default pages scale
+
+const PDFSrc = ref('https://cdn.jsdelivr.net/gh/themusecatcher/resources@0.0.3/Markdown.pdf')
+
+function onLoaded (pdfApp: any) {
+  console.log('loaded app:', pdfApp)
+}
+</script>
+<template>
+  <div>
+    <h1>vue3-pdf-app 参考文档</h1>
+    <ul class="m-list">
+      <li>
+        <a class="u-file" href="https://www.npmjs.com/package/vue3-pdf-app" target="_blank">vue3-pdf-app</a>
+      </li>
+    </ul>
+    <h2 class="mt30 mb10">PDFViewer 基本使用</h2>
+    <PDFViewer
+      page-scale="page-fit"
+      :width="800"
+      :height="700"
+      theme="dark"
+      :src="PDFSrc"
+      @loaded="onLoaded" />
+  </div>
+</template>
+</body>
+</html>
