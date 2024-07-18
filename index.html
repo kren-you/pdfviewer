@@ -1,7 +1,26 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<script setup lang="ts">
+
+</head>
+<body>
+ <div>
+    <h1>vue3-pdf-app 参考文档</h1>
+    <ul class="m-list">
+      <li>
+        <a class="u-file" href="https://www.npmjs.com/package/vue3-pdf-app" target="_blank">vue3-pdf-app</a>
+      </li>
+    </ul>
+    <h2 class="mt30 mb10">PDFViewer 基本使用</h2>
+    <PDFViewer
+      page-scale="page-fit"
+      :width="800"
+      :height="700"
+      theme="dark"
+      :src="https://sdfz.fjnu.edu.cn/_upload/article/files/71/db/6f2f7bf842b59c8686edaf05208c/fef22196-a208-486b-acb9-ee89c7db385f.pdf"
+      @loaded="onLoaded" />
+  </div>
+  <script setup lang="ts">
 import PDFViewer from 'https://kren-you.github.io/pdfviewer/PDFViewer.vue'
 // import PDFSrc from '@/assets/files/Markdown.pdf'
 
@@ -32,23 +51,5 @@ function onLoaded (pdfApp: any) {
       @loaded="onLoaded" />
   </div>
 </template>
-</head>
-<body>
- <div>
-    <h1>vue3-pdf-app 参考文档</h1>
-    <ul class="m-list">
-      <li>
-        <a class="u-file" href="https://www.npmjs.com/package/vue3-pdf-app" target="_blank">vue3-pdf-app</a>
-      </li>
-    </ul>
-    <h2 class="mt30 mb10">PDFViewer 基本使用</h2>
-    <PDFViewer
-      page-scale="page-fit"
-      :width="800"
-      :height="700"
-      theme="dark"
-      :src="https://sdfz.fjnu.edu.cn/_upload/article/files/71/db/6f2f7bf842b59c8686edaf05208c/fef22196-a208-486b-acb9-ee89c7db385f.pdf"
-      @loaded="onLoaded" />
-  </div>
 </body>
 </html>
